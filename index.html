@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>service Worker</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <img
+      src="https://blog.logrocket.com/wp-content/uploads/2020/06/cacheapi.png"
+    />
+    <script>
+      ;(async () => {
+        const registration = await navigator.serviceWorker.register('./sw.js', {
+          scope: '/',
+        })
+      })()
+
+      window.onload = function () {
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', './data.json')
+        xhr.responseType = 'json'
+        xhr.onload = () => {
+          app.innerText = xhr.response.result
+        }
+        xhr.send(null)
+      }
+    </script>
+  </body>
+</html>
