@@ -6,6 +6,8 @@ MDN 文档
 参考文章
 - [Working with the JavaScript Cache API](https://blog.logrocket.com/javascript-cache-api/)
 
+[代码地址](https://github.com/YooYooY/serviceWorker-demo)
+
 ## 目标
 
 断网情况下正常打开页面，加载本地缓存数据
@@ -122,7 +124,7 @@ self.addEventListener('install', (event) => {
 </html>
 ```
 
-sw.js 流程：
+sw.js 流程
 
 - 声明版本号
 
